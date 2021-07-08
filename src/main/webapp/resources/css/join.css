@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+* {
+   margin: 0;
+}
+
+.content {
+   display:flex; flex-flow:column;
+   width:100%; margin:auto;
+   text-align: center;
+}
+
+
+.content .aside{
+	display:flex; 
+	order: 1;
+	margin:auto;
+	width: 800px;
+	margin-bottom:20px;
+}
+
+
+.aside .section{
+	order:2;
+	width: 60%;
+	margin-left:100px;
+	background: #f5f5f5;
+}
+
+ul li {
+	display: flex;
+}
+
+.form label {
+	margin-top: 20px;
+	height: 30px; width:140px;
+	text-align: left;
+}
+
+.form input {
+	font-size: 13px;
+	height: 30px; width:250px;
+	border: 1px solid #DEDEDE;
+}
+
+
+.content a{ color: grey; }
+.content a:hover { color: black; }
+
+
+.title1 {
+	text-align: center;
+}
+
+.pwd {
+	font-size: 13px;
+}
+
+.success {
+	font-size: 20px;
+	width: 120px;
+	padding: 4px;
+	float: right;
+}
+
+.cancel {
+	font-size: 20px;
+	width: 60px;
+	padding: 4px;
+	float: left;
+}
+
+input{} input:read-only{background-color:#dedede} /* read-only style */ select{padding:7px; vertical-align:middle}
+
+
+.id_input_re_1{
+		color : green;
+		display : none;
+	}
+
+.id_input_re_2{
+		color : red;
+		display : none;
+	}
+	
+
+#mail_check_input_box_false{
+	background: gray;
+	
+}
+#mail_check_input_box_true{
+	background: white;
+}
+
+.mail_check_button{
+	border: 1px solid black;
+	height: 30px;
+	width: 20%;
+	text-align: center;
+	margin: auto 0;
+	background-color: yellow;
+	cursor: pointer;
+}
+
+.correct{
+	color: green;
+}
+.incorrect{
+	color: red;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.final_name_ck{
+	display: none;
+}
+.final_id_ck{
+	display: none;
+}
+
+.final_pw_ck{
+	display: none;
+}
+
+.final_pwd_ck{
+	display: none;
+}
+.final_ph_ck{
+	display: none;
+}
+.final_mail_ck{
+	display: none;
+}
+
+.final_addr_ck{
+	display: none;
+}
+
+.pwd_input_re_1{
+	color: green;
+	display: none;
+}
+
+.pwd_input_re_2{
+	color: red;
+	display: none;
+}
+
+

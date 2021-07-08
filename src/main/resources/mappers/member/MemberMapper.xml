@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.root.mybatis.member.MemberMapper">
+	
+	<resultMap id="member" type="com.care.root.member.dto.MemberDTO">
+		<id property="memberIdx" column="member_idx"/>
+		<result property="memberId" column="member_id"/>
+		<result property="memberName" column="member_name"/>
+		<result property="memberEmail" column="member_email"/>
+		<result property="memberPassword" column="member_password"/>
+		<result property="memberRole" column="member_role"/>
+		<result property="memberAddress" column="member_address"/>
+		<result property="memberAddress2" column="member_address2"/>
+		<result property="memberCreateDate" column="member_create_date"/>
+		<result property="memberPhone" column="member_phone"/>
+		<result property="memberSessionId" column="member_sessionId"/>
+		<result property="memberLimitTime" column="member_limitTime"/>
+	</resultMap>
+	
+	<select id="user_check" resultMap="member">
+		select * from member where member_id=#{memberId}
+	</select>
+	
+	<select id="memberInfo" resultMap="member">
+		select * from member
+	</select>
+	<select id="profile" resultMap="member">
+		select * from member where member_id = #{userId}
+	</select>
+	
+	<select id="info" resultMap="member">
+		select * from member where member_id=#{memberId}
+	</select>
+	
+	<insert id="register">
+		insert into member(member_idx, member_name, member_email, member_password, member_role, 
+						   member_address, member_address2, member_create_date, member_mileage, member_point, member_id, member_phone,
+						   member_sessionId, member_limitTime) 
+				    values(#{memberIdx}, #{memberName}, #{memberEmail}, #{memberPassword}, #{memberRole}, 
+					       #{memberAddress}, #{memberAddress2},#{memberCreateDate}, 0, 0, #{memberId}, #{memberPhone}, 
+					       #{memberSessionId}, #{memberLimitTime})
+	</insert>
+	
+	<update id="keepLogin">
+		update member set member_sessionId=#{memberSessionId},
+					  member_limitTime=#{memberLimitTime} where member_id=#{memberId}
+	</update>
+	
+	<select id="getUserSessionId" resultMap="member">
+		select * from member where member_sessionId=#{memberSessionId}
+	</select>
+	
+	<select id="selectBoardCount" resultType="Integer">
+		select count(*) from mvc_board
+	</select>
+	
+	<!-- 아이디 중복 확인 -->
+	<select id="idCheck" resultType="int">
+		select count(*) from member where member_id = #{memberId}
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="find_id" parameterType="String" resultType="String">
+		select member_id from member where member_email=#{memberEmail}
+	</select>
+	
+	<!-- 비번 찾기 -->
+	<select id="find_pw" parameterType="String" resultType="String">
+		select member_password from member where member_id=#{memberId}
+	</select>
+		
+	<!-- 회원정보 수정-->
+	<update id="modify" >
+		update member set member_password=#{memberPassword}, member_phone=#{memberPhone},
+						  member_email=#{memberEmail}, member_address=#{memberAddress},
+						  member_address2=#{memberAddress2}
+						  where member_id=#{memberId}
+	</update>
+	
+	<!-- 회원 탈퇴 -->
+	<delete id="delete">
+		delete from member where member_id = #{userId}
+	</delete> 
+	
+</mapper>
+
+
+
+

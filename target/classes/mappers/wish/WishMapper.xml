@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.root.mybatis.wish.WishMapper">
+
+	<resultMap id="wishes" type="com.care.root.wish.dto.WishDTO">
+		<id property="wishId" column="wish_id"/>
+		<result property="buyerIdx" column="buyer_idx"/>
+		<result property="wishName" column="wish_name"/>
+		<result property="wishTotalPrice" column="wish_total_price"/>
+		<result property="wishCounts" column="wish_counts"/>
+	</resultMap>
+	
+	<!-- readwishes.jsp -->
+	<select id="getUserWishes" resultMap="wishes">
+		select * from wish where buyer_idx=#{memberIdx}
+	</select>
+	
+	<delete id="deleteUserWishes">
+		delete from wish where wish_id=#{wishId}	
+	</delete>
+	
+</mapper>
+
+
+
+

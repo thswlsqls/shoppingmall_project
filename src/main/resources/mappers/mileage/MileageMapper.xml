@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.root.mybatis.mileage.MileageMapper">
+
+	<resultMap id="mileages" type="com.care.root.mileage.dto.MileageDTO">
+		<id property="mileageId" column="mileage_id"/>
+		<result property="memberIdx" column="member_idx"/>
+		<result property="orderId" column="order_id"/>
+		<result property="mileageStatus" column="mileage_status"/>
+		<result property="mileageDetails" column="mileage_details"/>
+		<result property="orderCreateDate" column="order_create_date"/>
+	</resultMap>
+	
+	<!-- readMileage.jsp -->
+	
+	<select id="getUserTotalMileage" resultType="Integer">
+		select count(*) from mileage where member_idx=#{memberIdx}
+	</select>
+	 
+	<select id="getUserMileages" resultMap="mileages">
+		select * from mileage where member_idx=#{memberIdx}
+	</select>
+	
+	<select id="getUserMileageStateList" resultType="String">
+		select mileage_status from mileage where member_idx=#{memberIdx}
+	</select>
+	
+	<select id="getUnusedUserMileages"  resultMap="mileages">
+		select *  from mileage where member_idx=#{memberIdx} 
+																				   AND mileage_status='미가용'
+	</select>
+	
+</mapper>
+
+
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.root.mybatis.member.MemberMapper">
+	
+	<resultMap id="member" type="com.care.root.member.dto.MemberDTO">
+		<id property="id" column="id"/>
+		<result property="pw" column="pw"/>
+		<result property="addr" column="addr"/>
+		<result property="sessionId" column="session_id"/>
+		<result property="limitTime" column="limit_time"/>
+	</resultMap>
+	
+	<select id="user_check" resultMap="member">
+		select * from membership where id=#{id}
+	</select>
+	<select id="memberInfo" resultMap="member">
+		select * from membership
+	</select>
+	<select id="info" resultMap="member">
+		select * from membership where id=#{userId}
+	</select>
+	
+	<insert id="register">
+		insert into membership values(#{id},#{pw},#{addr},#{sessionId},#{limitTime})
+	</insert>
+	
+	<update id="keepLogin">
+		update membership set session_id=#{sessionId},
+					limit_time=#{limitDate} where id=#{id}
+	</update>
+	
+	<select id="getUserSessionId" resultMap="member">
+		select * from membership where session_id=#{sessionId}
+	</select>
+	
+	<select id="selectBoardCount" resultType="Integer">
+		select count(*) from mvc_board
+	</select>
+	
+</mapper>
+
+
+
+

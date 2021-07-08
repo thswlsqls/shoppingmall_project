@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.root.mybatis.cart.CartMapper">
+
+	<resultMap id="carts" type="com.care.root.cart.dto.CartDTO">
+		<id property="cartId" column="cart_id"/>
+		<result property="memberId" column="member_id"/>
+		<result property="cartProductId" column="cart_product_id"/>
+		<result property="cartProductCounts" column="cart_product_counts"/>
+		<result property="cartProductPrice" column="cart_product_price"/>
+		<result property="cartProductFile1" column="cart_product_file_1"/>
+	</resultMap>
+	
+	<!-- readwishes.jsp -->		
+	<insert id="insertUserCart">
+		insert into review(cart_id, 
+											member_id, 	
+											cart_product_id, 
+											cart_product_counts, 	
+											cart_product_price,
+											cart_product_file_1)
+    	values(#{cartId},
+    				  #{memberId},
+    				  #{cartProductId},
+    				  #{cartProductCounts},
+    				  #{cartProductPrice},
+    				  #{cartProductFile1}
+	</insert>
+	<!-- 
+	<select id="getUserWishes" resultMap="wishes">
+		select * from wish where buyer_idx=#{memberIdx}
+	</select>	
+	
+	<update id="keepLogin">
+		update member set member_sessionId=#{memberSessionId},
+					  member_limitTime=#{memberLimitTime} where member_id=#{memberId}
+	</update>
+	
+	<delete id="deleteUserWishes">
+		delete from wish where wish_id=#{wishId}	
+	</delete>
+	 -->
+</mapper>
+
+
+
+

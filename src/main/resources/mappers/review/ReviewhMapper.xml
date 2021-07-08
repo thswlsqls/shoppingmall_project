@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.root.mybatis.review.ReviewMapper">
+
+	<resultMap id="reviews" type="com.care.root.review.dto.ReviewDTO">
+		<id property="reviewId" column="review_id"/>
+		<result property="reviewWriterIdx" column="review_writer_idx"/>
+		<result property="reviewTitle" column="review_title"/>
+		<result property="reviewContent" column="review_content"/>
+		<result property="productName" column="product_name"/>
+		<result property="productDegree" column="product_degree"/>
+		<result property="productScore" column="product_score"/>
+		<result property="productId" column="product_id"/>
+		<result property="productFile1" column="product_file_1"/>
+		<result property="productFile2" column="product_file_2"/>
+		<result property="productFile3" column="product_file_3"/>
+		<result property="productFile4" column="product_file_4"/>
+		<result property="productFile5" column="product_file_5"/>
+	</resultMap>
+	
+	<!-- readwishes.jsp -->
+	
+	<insert id="reviewSave">
+		insert into review(review_id, 
+											review_writer_idx, 	
+											review_title, 
+											review_content, 	
+											product_name,
+											product_degree, 
+											product_score, 
+											product_id,
+											product_file_1)
+    	values(#{reviewId},
+    				  #{reviewWriterIdx},
+    				  #{reviewTitle},
+    				  #{reviewContent},
+    				  #{productName},
+    				  #{productDegree},
+    				  #{productScore},
+    				  #{productId},
+    				  #{productFile1})
+	</insert>
+	
+	<insert id="register">
+		insert into member(member_idx, member_name, member_email, member_password, member_role, 
+						   member_address, member_create_date, member_mileage, member_point, member_id, member_phone,
+						   member_sessionId, member_limitTime) 
+				    values(#{memberIdx}, #{memberName}, #{memberEmail}, #{memberPassword}, #{memberRole}, 
+					       #{memberAddress}, #{memberCreateDate}, 0, 0, #{memberId}, #{memberPhone}, 
+					       #{memberSessionId}, #{memberLimitTime})
+	</insert>
+	<!-- 
+	<select id="getUserWishes" resultMap="wishes">
+		select * from wish where buyer_idx=#{memberIdx}
+	</select>
+	
+	<select id="getUserTotalMileage" resultType="Integer">
+		select count(*) from mileage where member_idx=#{memberIdx}
+	</select>
+	 
+	<select id="getUserMileages" resultMap="mileages">
+		select * from mileage where member_idx=#{memberIdx}
+	</select>
+	
+	<select id="getUserMileageStateList" resultType="String">
+		select mileage_status from mileage where member_idx=#{memberIdx}
+	</select>
+	 -->
+
+</mapper>
+
+
+
+

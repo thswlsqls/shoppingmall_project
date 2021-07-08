@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.care.root.mybatis.notice.NoticeMapper">
+	<resultMap type="com.care.root.notice.dto.NoticeDTO" id="notice">
+		<id property="noticeId" column="notice_id"/>
+		<result property="noticeWriterId" column="notice_writer_id"/>
+		<result property="noticeTitle" column="notice_title"/>
+		<result property="noticeContent" column="notice_content"/>
+		<result property="noticeViews" column="notice_views"/>
+		<result property="noticeCreateDate" column="notice_create_date"/>
+		<result property="noticeUpdateDate" column="notice_update_date"/>	
+		<result property="noticeImageFileName" column="notice_image_file_name"/>
+	</resultMap>
+	
+	<resultMap type="com.care.root.notice.dto.NoticeRepDTO" id="reply">
+		<result property="noticeWriterId" column="notice_writer_id"/>
+		<result property="noticeTitle" column="notice_title"/>
+		<result property="noticeContent" column="notice_content"/>
+		<result property="write_group" column="write_group"/>
+		<result property="write_date" column="write_date"/>
+	</resultMap>
+
+	<select id="selectAllNoticeList" resultMap="notice">
+		select B.* from(select rownum rn, A.* from
+		(select * from notice order by notice_id desc)A)B where rn between #{s} and #{e}
+	</select>
+	
+	<insert id="writeSave">
+		insert into notice(notice_id,notice_writer_id,notice_title,notice_content,notice_image_file_name)
+		values(notice_seq.nextval,#{noticeWriterId},#{noticeTitle},#{noticeContent},#{noticeImageFileName})
+	</insert>
+	
+	<select id="contentView" resultMap="notice">
+		select * from notice where notice_id = #{noticeId}
+	</select>
+	
+	<update id="noticeViews">
+		update notice set notice_views=notice_views+1 where notice_id = #{noticeId}
+	</update>
+	
+	<update id="modify">
+		update notice set notice_title=#{noticeTitle}, notice_content=#{noticeContent},
+			notice_image_file_name=#{noticeImageFileName} where notice_id = #{noticeId}
+	</update>
+	
+	<delete id="delete">
+		delete from notice where notice_id=#{noticeId}
+	</delete>
+	
+	<insert id="addReply">
+		insert into reply(notice_writer_id,notice_title,notice_content,write_group)
+			values(#{noticeWriterId},#{noticeTitle},#{noticeContent},#{write_group})
+	</insert>
+	
+	<select id="getRepList" resultMap="reply">
+		select * from reply where write_group=#{write_group}
+					order by write_date desc
+	</select>
+	
+	<select id="selectNoticeCount" resultType="Integer">
+		select count(*) from notice
+	</select>
+	
+</mapper>

@@ -26,7 +26,7 @@ __개발툴__ - Eclipse IDE(21-3)
 
 
 ##spring mvc team project made with oracle datase   
-###you can simply check the *_captures.pdf, *_execution.mp4 files
+###you can simply check the *.pdf, *_execution.mp4 files
 
 [shoppingmall_project_captures.pdf](https://github.com/thswlsqls/shoppingmall_project/files/7594562/shoppingmall_project_captures.pdf)
 

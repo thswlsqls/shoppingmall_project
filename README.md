@@ -19,7 +19,7 @@ __허예진__ - 메인페이지 헤더와 푸터, 로그인, 아이디/비밀번
 ---------------------------------------------------------------
 __3. 개발 환경 및 사용 기술__
 ----------------------------------------------------------------
-__프론트__ - JSP, Javascripqt, JQuery, EL, JSTL  
+__프론트__ - JSP, Javascript, JQuery, EL, JSTL  
 __백엔드__ - Spring legacy Framework, MyBatis, Oracle Database, Tomcat(9.0)  
 __개발툴__ - Eclipse IDE(21-3)  
 

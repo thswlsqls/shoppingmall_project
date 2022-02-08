@@ -22,11 +22,3 @@ __3. 개발 환경 및 사용 기술__
 __프론트__ - JSP, Javascript, JQuery, EL, JSTL  
 __백엔드__ - Spring legacy Framework, MyBatis, Oracle Database, Tomcat(9.0)  
 __개발툴__ - Eclipse IDE(21-3)  
-
-
-
-spring mvc team project made with oracle database   
-you can simply check the *.pdf, *_execution.mp4 files  
-
-[shoppingmall_project_captures.pdf](https://github.com/thswlsqls/shoppingmall_project/files/7594562/shoppingmall_project_captures.pdf)  
-[shoppingmall_project_presentation.pdf](https://github.com/thswlsqls/shoppingmall_project/files/7594868/shoppingmall_project_presentation.pdf)  

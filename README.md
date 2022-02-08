@@ -22,3 +22,8 @@ __3. 개발 환경 및 사용 기술__
 __프론트__ - JSP, Javascript, JQuery, EL, JSTL  
 __백엔드__ - Spring legacy Framework, MyBatis, Oracle Database, Tomcat(9.0)  
 __개발툴__ - Eclipse IDE(21-3)  
+
+---------------------------------------------------------------
+__4. 실행 화면 모음__
+----------------------------------------------------------------
+https://github.com/thswlsqls/shoppingmall_project/blob/main/shoppingmall_project_captures.pdf

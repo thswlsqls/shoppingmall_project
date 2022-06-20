@@ -55,15 +55,15 @@ __5. 실행 화면 모음__
 
 ![image](https://user-images.githubusercontent.com/58901024/174548692-9c835bf4-31a9-4d56-9a7e-5a3c975e4268.png)
 
-6) 상품 목록보기
+6) 상품 목록 조회
 
 ![image](https://user-images.githubusercontent.com/58901024/174548762-7eac1c2e-c664-43b4-aa08-471d31c7586e.png)
 
-7) 상품 상세보기 / 관련 상품보기
+7) 상품 상세조회 / 관련 상품조회
 
 ![image](https://user-images.githubusercontent.com/58901024/174548856-4111a55e-53e5-427e-be34-6736fe51aecc.png)
 
-8) 장바구니 상품 보기
+8) 장바구니 상품 조회
 
 ![image](https://user-images.githubusercontent.com/58901024/174548917-2ae8c2c4-7aef-4af8-92db-0ddae809fa4c.png)
 
@@ -71,7 +71,7 @@ __5. 실행 화면 모음__
 
 ![image](https://user-images.githubusercontent.com/58901024/174548981-9eb45fa3-a1c7-4e7c-a4a0-db812e6b516a.png)
 
-10) 상품 후기 작성
+10) 상품 후기 등록
 
 ![image](https://user-images.githubusercontent.com/58901024/174549067-2f7bb39b-68ac-415b-a15f-11d01cce5987.png)
 
@@ -91,11 +91,11 @@ __5. 실행 화면 모음__
 
 ![image](https://user-images.githubusercontent.com/58901024/174549326-9664df56-d406-4bc6-a16d-0e49c0050a35.png)
 
-15) 공지사항 상세조회
+15) 공지사항 상세 조회
 
 ![image](https://user-images.githubusercontent.com/58901024/174549373-ddb0e614-6eaf-4603-a310-f24b4f2d343f.png)
 
 
 
-#실행화면 캡처 모음
+실행화면 캡처 모음
 https://github.com/thswlsqls/shoppingmall_project/blob/main/shoppingmall_project_captures.pdf

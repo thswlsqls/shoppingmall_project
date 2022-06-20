@@ -26,4 +26,10 @@ __개발툴__ - Eclipse IDE(21-3)
 ---------------------------------------------------------------
 __4. 실행 화면 모음__
 ----------------------------------------------------------------
+1) 회원가입
+
+![image](https://user-images.githubusercontent.com/58901024/174548286-d932acc4-5354-4889-96ec-4fae84c4e74f.png)
+
+2) 
+
 https://github.com/thswlsqls/shoppingmall_project/blob/main/shoppingmall_project_captures.pdf

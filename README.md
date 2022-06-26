@@ -94,8 +94,3 @@ __5. 실행 화면 모음__
 15) 공지사항 상세 조회
 
 ![image](https://user-images.githubusercontent.com/58901024/174549373-ddb0e614-6eaf-4603-a310-f24b4f2d343f.png)
-
-
-
-실행화면 캡처 모음
-https://github.com/thswlsqls/shoppingmall_project/blob/main/shoppingmall_project_captures.pdf
